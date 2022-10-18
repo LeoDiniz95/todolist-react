@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Container from 'react-bootstrap/Container';
+import Header from './Components/Header';
+import Row from 'react-bootstrap/Row';
+import ListItems from './Components/ListItems';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    function refresh(): void {
+        window.location.reload();
+    }
+
+    return (
+        <Container className="bg-dark vh-auto p-0" fluid>
+            <Row>
+                <Header />
+            </Row>
+            <Row className="flex-column vh-100">
+                <ListItems />
+            </Row>
+        </Container>
+    );
 }
 
 export default App;
